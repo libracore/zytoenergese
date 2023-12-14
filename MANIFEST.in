@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include zytoenergese *.css
+recursive-include zytoenergese *.csv
+recursive-include zytoenergese *.html
+recursive-include zytoenergese *.ico
+recursive-include zytoenergese *.js
+recursive-include zytoenergese *.json
+recursive-include zytoenergese *.md
+recursive-include zytoenergese *.png
+recursive-include zytoenergese *.py
+recursive-include zytoenergese *.svg
+recursive-include zytoenergese *.txt
+recursive-exclude zytoenergese *.pyc
