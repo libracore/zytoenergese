@@ -74,5 +74,41 @@ def get_data():
                    "description": _("Price List")
                 }
             ]
+        },
+        {
+            "label": _("Accounting"),
+            "icon": "fa fa-tools",
+            "items": [
+                {
+                   "type": "doctype",
+                   "name": "Supplier",
+                   "label": _("Supplier"),
+                   "description": _("Supplier")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Purchase Invoice",
+                   "label": _("Purchase Invoice"),
+                   "description": _("Purchase Invoice")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Payment Proposal",
+                   "label": _("Payment Proposal"),
+                   "description": _("Payment Proposal")
+                },
+                {
+                   "type": "page",
+                   "name": "bank_wizard",
+                   "label": _("Bank wizard"),
+                   "description": _("Bank wizard")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Journal Entry",
+                   "label": _("Journal Entry"),
+                   "description": _("Journal Entry")
+                }
+            ]
         }
     ]
