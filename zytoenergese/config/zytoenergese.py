@@ -72,6 +72,12 @@ def get_data():
                    "name": "Price List",
                    "label": _("Price List"),
                    "description": _("Price List")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Device",
+                   "label": _("Device"),
+                   "description": _("Device")
                 }
             ]
         },
