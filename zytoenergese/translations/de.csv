@@ -1,0 +1,6 @@
+DocType: Device,Device Name,Gerätname
+DocType: Device,Device Type,Gerättyp
+DocType: Device,To Order,Von Auftrag
+DocType: Device,Transaction type,Transaktionsart
+DocType: Device,Rent Start,Mietstart
+DocType: Device,Rent End,Mietende

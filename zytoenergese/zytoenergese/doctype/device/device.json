@@ -6,8 +6,10 @@
  "engine": "InnoDB",
  "field_order": [
   "device_name",
+  "device_type",
   "to_order",
   "column_break_3",
+  "transaction_type",
   "rent_start",
   "rent_end"
  ],
@@ -31,20 +33,38 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.transaction_type == \"Miete\";",
    "fieldname": "rent_start",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Rent Start",
-   "reqd": 1
+   "label": "Rent Start"
   },
   {
+   "depends_on": "eval:doc.transaction_type == \"Miete\";",
    "fieldname": "rent_end",
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Rent End"
+  },
+  {
+   "fetch_from": "to_order.transaction",
+   "fieldname": "transaction_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Transaction type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Device Type",
+   "options": "Item",
+   "reqd": 1
   }
  ],
- "modified": "2023-12-20 10:32:50.804212",
+ "modified": "2023-12-21 14:26:14.372447",
  "modified_by": "Administrator",
  "module": "Zytoenergese",
  "name": "Device",
