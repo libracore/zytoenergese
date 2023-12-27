@@ -4,3 +4,4 @@ DocType: Device,To Order,Von Auftrag
 DocType: Device,Transaction type,Transaktionsart
 DocType: Device,Rent Start,Mietstart
 DocType: Device,Rent End,Mietende
+DocType: Sales Invoice,Inclusive,Inklusive
