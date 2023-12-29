@@ -5,3 +5,5 @@ DocType: Device,Transaction type,Transaktionsart
 DocType: Device,Rent Start,Mietstart
 DocType: Device,Rent End,Mietende
 DocType: Sales Invoice,Inclusive,Inklusive
+DocType: Sales Invoice,Period Start,Periode Start
+DocType: Sales Invoice,Period End,Periode Ende
