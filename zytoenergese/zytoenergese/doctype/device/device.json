@@ -15,7 +15,8 @@
   "rent_end",
   "with_maintenance_contract_check",
   "with_old_maintenance_contract",
-  "maintenance_contract_start"
+  "maintenance_contract_start",
+  "first_invoice_due"
  ],
  "fields": [
   {
@@ -51,12 +52,13 @@
   },
   {
    "fetch_from": "to_order.transaction",
+   "fetch_if_empty": 1,
    "fieldname": "transaction_type",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Transaction type",
-   "read_only": 1
+   "options": "\nMiete\nKauf"
   },
   {
    "fieldname": "device_type",
@@ -68,31 +70,41 @@
   },
   {
    "fetch_from": "to_order.customer_name",
+   "fetch_if_empty": 1,
    "fieldname": "customer",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
-   "read_only": 1
+   "options": "Customer"
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.transaction_type == \"Kauf\"",
    "fieldname": "with_maintenance_contract_check",
    "fieldtype": "Check",
    "label": "With Maintenance Contract"
   },
   {
-   "depends_on": "eval:doc.with_maintenance_contract_check == 1\nor doc.with_old_maintenance_contract == 1",
+   "depends_on": "eval:doc.with_maintenance_contract_check == 1 || doc.with_old_maintenance_contract == 1",
    "fieldname": "maintenance_contract_start",
-   "fieldtype": "Data",
-   "label": "Maintenance contract Start"
+   "fieldtype": "Date",
+   "label": "Maintenance Contract Start"
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.transaction_type == \"Kauf\"",
    "fieldname": "with_old_maintenance_contract",
    "fieldtype": "Check",
    "label": "With Old Maintenance Contract"
+  },
+  {
+   "depends_on": "eval:doc.with_maintenance_contract_check == 1 || doc.with_old_maintenance_contract == 1",
+   "fieldname": "first_invoice_due",
+   "fieldtype": "Date",
+   "label": "First Invoice Due"
   }
  ],
- "modified": "2024-01-10 09:01:10.902236",
+ "modified": "2024-01-10 12:10:43.927493",
  "modified_by": "Administrator",
  "module": "Zytoenergese",
  "name": "Device",
@@ -111,7 +123,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1
