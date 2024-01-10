@@ -12,7 +12,10 @@
   "column_break_3",
   "transaction_type",
   "rent_start",
-  "rent_end"
+  "rent_end",
+  "with_maintenance_contract_check",
+  "with_old_maintenance_contract",
+  "maintenance_contract_start"
  ],
  "fields": [
   {
@@ -26,8 +29,7 @@
    "fieldname": "to_order",
    "fieldtype": "Link",
    "label": "To Order",
-   "options": "Sales Order",
-   "reqd": 1
+   "options": "Sales Order"
   },
   {
    "fieldname": "column_break_3",
@@ -70,9 +72,27 @@
    "fieldtype": "Data",
    "label": "Customer",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "with_maintenance_contract_check",
+   "fieldtype": "Check",
+   "label": "With Maintenance Contract"
+  },
+  {
+   "depends_on": "eval:doc.with_maintenance_contract_check == 1\nor doc.with_old_maintenance_contract == 1",
+   "fieldname": "maintenance_contract_start",
+   "fieldtype": "Data",
+   "label": "Maintenance contract Start"
+  },
+  {
+   "default": "0",
+   "fieldname": "with_old_maintenance_contract",
+   "fieldtype": "Check",
+   "label": "With Old Maintenance Contract"
   }
  ],
- "modified": "2023-12-29 11:25:28.301444",
+ "modified": "2024-01-10 09:01:10.902236",
  "modified_by": "Administrator",
  "module": "Zytoenergese",
  "name": "Device",
