@@ -5,6 +5,7 @@
 $(document).ready(function() {
 	setTimeout(function(){
 		var company = frappe.defaults.get_user_default("Company")
+		console.log(company);
 		var navbars = document.getElementsByClassName("navbar");
 		if (navbars.length > 0) {
 			if (company == "iNCO Beauty-Line GmbH") {

@@ -242,7 +242,7 @@
    "modified_by": "Administrator",
    "name": "Delivery Note-transaction",
    "no_copy": 0,
-   "options": "\nKauf\nMiete",
+   "options": "\nKauf\nMiete\nDienstleistung",
    "owner": "Administrator",
    "parent": null,
    "parentfield": null,
