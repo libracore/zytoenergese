@@ -78,6 +78,12 @@ def get_data():
                    "name": "Device",
                    "label": _("Device"),
                    "description": _("Device")
+                },
+                {
+                   "type": "report",
+                   "name": "Device Overview",
+                   "label": _("Device Overview"),
+                   "description": _("Device Overview")
                 }
             ]
         },
