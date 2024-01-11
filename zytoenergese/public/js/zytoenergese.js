@@ -16,5 +16,5 @@ $(document).ready(function() {
 				navbars[0].style.backgroundColor = "#33ecff";
 			}
 		}
-	}, 2000);
+	}, 3000);
 });
