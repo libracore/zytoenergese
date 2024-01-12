@@ -9,6 +9,7 @@
   "device_type",
   "to_order",
   "customer",
+  "customer_name",
   "column_break_3",
   "transaction_type",
   "rent_start",
@@ -16,7 +17,8 @@
   "with_maintenance_contract_check",
   "with_old_maintenance_contract",
   "maintenance_contract_start",
-  "first_invoice_due"
+  "first_invoice_due",
+  "invoice_created"
  ],
  "fields": [
   {
@@ -69,11 +71,10 @@
    "reqd": 1
   },
   {
-   "fetch_from": "to_order.customer_name",
+   "fetch_from": "to_order.customer",
    "fetch_if_empty": 1,
    "fieldname": "customer",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Customer",
    "options": "Customer"
   },
@@ -102,9 +103,22 @@
    "fieldname": "first_invoice_due",
    "fieldtype": "Date",
    "label": "First Invoice Due"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_created",
+   "fieldtype": "Data",
+   "label": "Invoice Created"
   }
  ],
- "modified": "2024-01-10 12:10:43.927493",
+ "modified": "2024-01-12 16:27:13.082078",
  "modified_by": "Administrator",
  "module": "Zytoenergese",
  "name": "Device",

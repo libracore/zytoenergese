@@ -82,8 +82,8 @@ def get_data():
                 {
                    "type": "report",
                    "name": "Device Overview",
-                   "label": _("Device Overview"),
-                   "description": _("Device Overview")
+                   "doctype": "Device",
+                   "is_query_report": True
                 }
             ]
         },
