@@ -7,7 +7,7 @@ from frappe import _
 
 def execute(filters=None):
 	columns = get_columns()
-	data = get_data()
+	data = get_data(filters)
 	return columns, data
 	
 def get_columns():
@@ -27,7 +27,7 @@ def get_columns():
 	]
 	return columns
 
-def get_data():
+def get_data(filters):
 	
 	sql_query = """SELECT
 		`device_type`,
@@ -43,6 +43,12 @@ def get_data():
 		`first_invoice_due` AS `first_invoice`,
 		`invoice_created`
 		FROM `tabDevice`"""
+	
+	if filters.invoice_maintenance_contract:
+		sql_query += """
+			WHERE `first_invoice_due` > '{today}'
+			AND `invoice_created` = 0
+		"""
 		
 	data = frappe.db.sql(sql_query, as_dict=True)
 	

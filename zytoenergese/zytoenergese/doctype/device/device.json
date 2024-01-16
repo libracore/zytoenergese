@@ -114,7 +114,7 @@
   },
   {
    "fieldname": "invoice_created",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Invoice Created"
   }
  ],
