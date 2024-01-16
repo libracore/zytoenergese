@@ -18,7 +18,8 @@
   "with_old_maintenance_contract",
   "maintenance_contract_start",
   "first_invoice_due",
-  "invoice_created"
+  "invoice_created",
+  "device_returned"
  ],
  "fields": [
   {
@@ -114,12 +115,20 @@
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.with_maintenance_contract_check == 1 || doc.with_old_maintenance_contract == 1",
    "fieldname": "invoice_created",
    "fieldtype": "Check",
    "label": "Invoice Created"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.transaction_type == \"Miete\";",
+   "fieldname": "device_returned",
+   "fieldtype": "Check",
+   "label": "Device Returned"
   }
  ],
- "modified": "2024-01-16 21:22:41.476584",
+ "modified": "2024-01-16 21:32:30.827898",
  "modified_by": "Administrator",
  "module": "Zytoenergese",
  "name": "Device",
