@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe import _
+from frappe.utils import today
 
 def execute(filters=None):
 	columns = get_columns()
@@ -29,6 +30,8 @@ def get_columns():
 
 def get_data(filters):
 	
+	actual_date = today()
+	
 	sql_query = """SELECT
 		`device_type`,
 		`device_name`,
@@ -46,9 +49,9 @@ def get_data(filters):
 	
 	if filters.invoice_maintenance_contract:
 		sql_query += """
-			WHERE `first_invoice_due` > '{today}'
+			WHERE `first_invoice_due` < '{today}'
 			AND `invoice_created` = 0
-		"""
+		""".format(today=actual_date)
 		
 	data = frappe.db.sql(sql_query, as_dict=True)
 	
