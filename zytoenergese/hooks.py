@@ -27,12 +27,19 @@ app_include_js = "/assets/zytoenergese/js/zytoenergese.js"
 
 # include js in doctype views
 doctype_js = {
-	"Customer" : "public/js/customer.js",
-	"Sales Order" : "public/js/sales_order.js"
+    "Customer" : "public/js/customer.js",
+    "Sales Order" : "public/js/sales_order.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+# additional Jinja environment
+jenv = {
+    "methods": [
+        "get_devices_for_auto_reply:zytoenergese.zytoenergese.doctype.device.device.get_devices_for_auto_repeat"
+    ]
+}
 
 # Home Pages
 # ----------
@@ -42,7 +49,7 @@ doctype_js = {
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+#   "Role": "home_page"
 # }
 
 # Website user home page (by function)
@@ -71,11 +78,11 @@ doctype_js = {
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+#   "Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+#   "Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # Document Events
@@ -83,32 +90,32 @@ doctype_js = {
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
+#   "*": {
+#       "on_update": "method",
+#       "on_cancel": "method",
+#       "on_trash": "method"
+#   }
 # }
 
 # Scheduled Tasks
 # ---------------
 
 # scheduler_events = {
-# 	"all": [
-# 		"zytoenergese.tasks.all"
-# 	],
-# 	"daily": [
-# 		"zytoenergese.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"zytoenergese.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"zytoenergese.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"zytoenergese.tasks.monthly"
-# 	]
+#   "all": [
+#       "zytoenergese.tasks.all"
+#   ],
+#   "daily": [
+#       "zytoenergese.tasks.daily"
+#   ],
+#   "hourly": [
+#       "zytoenergese.tasks.hourly"
+#   ],
+#   "weekly": [
+#       "zytoenergese.tasks.weekly"
+#   ]
+#   "monthly": [
+#       "zytoenergese.tasks.monthly"
+#   ]
 # }
 
 # Testing
@@ -120,13 +127,13 @@ doctype_js = {
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "zytoenergese.event.get_events"
+#   "frappe.desk.doctype.event.event.get_events": "zytoenergese.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "zytoenergese.task.get_dashboard_data"
+#   "Task": "zytoenergese.task.get_dashboard_data"
 # }
 
